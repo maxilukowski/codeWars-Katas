@@ -10,7 +10,7 @@ Examples
 
 word = 'hallo'
 
-const duplicateEncode = (string) => {
+/* const duplicateEncode = (string) => {
   const arrayOfCharacters = [...string.toLowerCase()]
   const characterCounter = {}
   const newArrayOfCharacters = []
@@ -24,4 +24,16 @@ const duplicateEncode = (string) => {
     else newArrayOfCharacters.push('(')
   })
   return newArrayOfCharacters.join('')
+} */
+
+const duplicateEncode = (string) => {
+  return string
+    .toLowerCase()
+    .split('')
+    .map((char, i, a) => {
+      return a.lastIndexOf(char) === a.indexOf(char) ? '(' : ')'
+    })
+    .join('')
 }
+
+console.log(duplicateEncode(word))
