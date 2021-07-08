@@ -5,7 +5,7 @@ interface Entry {
   continent: string
   age: number
   language: string
-  username?: string
+  usernameu?: string
 }
 
 const list = [
@@ -17,7 +17,7 @@ const addUsername = (arr: Entry[]) => {
   const date = new Date()
 
   return arr.map((e) => {
-    e.username = e.firstName.toLocaleLowerCase() + e.lastName[0].toLocaleLowerCase() + (date.getFullYear() - e.age)
+    e.usernameu = e.firstName.toLocaleLowerCase() + e.lastName[0].toLocaleLowerCase() + (date.getFullYear() - e.age)
     return e
   })
 }
